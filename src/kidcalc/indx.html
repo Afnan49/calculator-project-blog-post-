@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kid calc</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!--============================================< html  >============================ -->
+    <!-- login section start -->
+    <section class="login">
+      <form id="loginForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required />
+
+        <label for="theme">Theme:</label>
+        <select id="theme" name="theme">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="gray">gray</option>
+          <option value="blue">blue</option>
+        </select>
+
+        <input class="button" type="submit" value="Submit" />
+      </form>
+    </section>
+    <!-- login section end -->
+    <!-- calckid section start -->
+    <section id="kidCalc-section">
+      <div class="kidCalc">
+        <div class="expression-box" id="expressionBox"></div>
+        <input
+          type="text"
+          class="answer-input"
+          id="answerInput"
+          placeholder="Enter your answer"
+        />
+        <button class="submit-btn" onclick="submitAnswer()">Submit</button>
+        <button class="clear-btn" onclick="clearCalc()">Clear</button>
+        <div class="result-box" id="resultBox"></div>
+        <div class="buttons">
+          <button onclick="addToExpression(0)">0</button>
+          <button onclick="addToExpression(1)">1</button>
+          <button onclick="addToExpression(2)">2</button>
+          <button onclick="addToExpression(3)">3</button>
+          <button onclick="addToExpression(4)">4</button>
+          <button onclick="addToExpression(5)">5</button>
+          <button onclick="addToExpression(6)">6</button>
+          <button onclick="addToExpression(7)">7</button>
+          <button onclick="addToExpression(8)">8</button>
+          <button onclick="addToExpression(9)">9</button>
+          <button onclick="setOperator('+')">+</button>
+          <button onclick="setOperator('-')">-</button>
+          <button onclick="setOperator('>')">></button>
+          <button onclick="setOperator('<')"><</button>
+        </div>
+      </div>
+    </section>
+    <!-- calckid section end -->
+    <!-- infobar section start -->
+    <section id="info-bar-section">
+      <div id="info-bar">
+        <span id="welcome-message"></span>
+        <span id="kidcalc-counter"></span>
+      </div>
+    </section>
+    <!-- infobar section start -->
+    <!--============================================< java script  >============================ -->
+    <script>
+      // ********** login section start ******//
+      let userName = document.querySelector("#name").value;
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var name = document.getElementById("name").value;
+          var age = document.getElementById("age").value;
+          var theme = document.getElementById("theme").value;
+          localStorage.setItem("name", name);
+          localStorage.setItem("age", age);
+          localStorage.setItem("theme", theme);
+          handletheme(theme);
+          updatInfobar(name);
+          document.getElementById("name").value = "";
+          document.getElementById("age").value = "";
+          document.getElementById("theme").value = "light";
+          window.location.href = "#kidCalc-section";
+        });
+      // ********** login section end ******//
+      // ********** calckid section start  ******//
+
+      let expression = "";
+      let operatorClicked = false;
+      let firstOperand = "";
+      let operator = "";
+      let secondOperand = "";
+      let greatAnswer = 0;
+      function addToExpression(value) {
+        if (!operatorClicked) {
+          firstOperand += value;
+        } else {
+          secondOperand += value;
+        }
+        expression += value;
+        document.getElementById("expressionBox").innerText = expression;
+      }
+
+      function submitAnswer() {
+        let resultMessage;
+        const answer = document.getElementById("answerInput").value;
+        let correctAnswer;
+        if (operator === "+") {
+          correctAnswer = Number(firstOperand) + Number(secondOperand);
+        } else if (operator === "-") {
+          correctAnswer = Number(firstOperand) - Number(secondOperand);
+        } else if (operator === ">") {
+          correctAnswer = Number(firstOperand) > Number(secondOperand);
+        } else if (operator === "<") {
+          correctAnswer = Number(firstOperand) < Number(secondOperand);
+        }
+        if (operator === ">" || operator === "<") {
+          const userBooleanAnswer = answer.toLowerCase() === "true";
+          resultMessage =
+            correctAnswer === userBooleanAnswer
+              ? "Correct! Your answer is correct."
+              : "Incorrect! Your answer is incorrect.";
+        } else {
+          if (Number(answer) === correctAnswer) {
+            resultMessage = answer + " " + "Great job!";
+            greatAnswer++;
+            updatInfobarScore(greatAnswer);
+          } else {
+            resultMessage = answer + " " + "It is not correct try again.";
+          }
+        }
+        document.getElementById("resultBox").innerText = resultMessage;
+        window.location.href = "#info-bar-section";
+      }
+      function clearCalc() {
+        expression = "";
+        firstOperand = "";
+        operator = "";
+        secondOperand = "";
+        operatorClicked = false;
+        document.getElementById("expressionBox").innerText = "";
+        document.getElementById("answerInput").value = "";
+        document.getElementById("resultBox").innerText = "";
+      }
+      function setOperator(op) {
+        operator = op;
+        operatorClicked = true;
+        expression += op;
+        document.getElementById("expressionBox").innerText = expression;
+      }
+      // ********** calckid section end  ******//
+      // ********** infobar section start  ******//
+      function updatInfobar(name) {
+        let userName = document.querySelector("#welcome-message");
+        userName.innerText = `welcom ${name}`;
+        let infoBar = document.querySelector("#info-bar");
+        infoBar.style.padding = "10px";
+      }
+      function updatInfobarScore(greatAnswer) {
+        let userResult = document.querySelector("#kidcalc-counter");
+        userResult.innerText = ` your correct score is ${greatAnswer}`;
+      }
+      // ********** infobar section end  ******//
+      // ********** handle theme  start  ******//
+      function handletheme(theme) {
+        let body = document.body;
+        body.classList.remove("light", "dark", "gray", "blue");
+        body.classList.add(`${theme}`);
+      }
+      // ********** handle theme end  ******//
+    </script>
+  </body>
+</html>

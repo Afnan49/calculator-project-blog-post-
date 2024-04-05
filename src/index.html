@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./assets/css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!------------------ start navigation bar ------------------------>
+    <nav>
+      <div class="container">
+        <div class="logo">
+          <img src="./assets/images/logo.jpg" alt="logo image" />
+        </div>
+        <!-- main page likes -->
+        <div class="links">
+          <ul class="links-ul">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./kidcalc/indx.html">calculator</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <!-- toggle links -->
+        <div class="toggle-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="toggle-menu-links">
+          <ul class="links-ul">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./kidcalc/indx.html">calculator</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!------------------ end navigation bar ------------------------>
+    <!------------------ start main content ------------------------>
+    <section>
+      <div class="container">
+        <!-- ****** card1 ****** -->
+        <div class="grid">
+          <div class="card">
+            <div class="card-img">
+              <img src="./assets/images/world.jpg" alt="card image" />
+            </div>
+            <div class="card-content">
+              <div class="type">
+                <p>World</p>
+              </div>
+              <div class="card-title">
+                <h1>Example Blog Post</h1>
+              </div>
+              <div class="card-date">
+                <span>nov 12</span>
+              </div>
+              <div class="card-text">
+                <p>This card represents an example blog post</p>
+              </div>
+              <a href="./blog-posts/post1.html">Continue reading</a>
+            </div>
+          </div>
+          <!-- ****** card2 ****** -->
+          <div class="card">
+            <div class="card-img">
+              <img src="./assets/images/design.jpg" alt="card image" />
+            </div>
+            <div class="card-content">
+              <div class="type">
+                <p>Design</p>
+              </div>
+              <div class="card-title">
+                <h1>POST title</h1>
+              </div>
+              <div class="card-date">
+                <span>nov 11</span>
+              </div>
+              <div class="card-text">
+                <p>This card represents an example blog post</p>
+              </div>
+              <a href="./blog-posts/post1.html">Continue reading</a>
+            </div>
+          </div>
+          <!-- ****** card3****** -->
+          <div class="card">
+            <div class="card-img">
+              <img src="./assets/images/world.jpg" alt="card image" />
+            </div>
+            <div class="card-content">
+              <div class="type">
+                <p>World</p>
+              </div>
+              <div class="card-title">
+                <h1>Example Blog Post</h1>
+              </div>
+              <div class="card-date">
+                <span>nov 12</span>
+              </div>
+              <div class="card-text">
+                <p>This card represents an example blog post</p>
+              </div>
+              <a href="./blog-posts/post1.html">Continue reading</a>
+            </div>
+          </div>
+          <!-- ****** card4****** -->
+          <div class="card">
+            <div class="card-img">
+              <img src="./assets/images/design.jpg" alt="card image" />
+            </div>
+            <div class="card-content">
+              <div class="type">
+                <p>Design</p>
+              </div>
+              <div class="card-title">
+                <h1>POST title</h1>
+              </div>
+              <div class="card-date">
+                <span>nov 11</span>
+              </div>
+              <div class="card-text">
+                <p>This card represents an example blog post</p>
+              </div>
+              <a href="./blog-posts/post1.html">Continue reading</a>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </section>
+    <!------------------ end main content ------------------------>
+    <!------------------ start footer ---------------------------->
+    <footer>
+      <div class="container">
+        <div>
+          <p>&copy; copyright 2024</p>
+        </div>
+        <div class="icons">
+          <a href="http://facebook.com"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="http://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+          <a href="http://linkedin.com"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <!------------------ end footer ------------------------------>
+    <!-- --------------- javascript code -->
+    <script>
+      let toggleButton = document.querySelector(".toggle-menu");
+      toggleButton.addEventListener("click", () => {
+        let mobileMenu = document.querySelector(".toggle-menu-links");
+        mobileMenu.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

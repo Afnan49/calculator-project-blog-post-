@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog post</title>
+    <link rel="stylesheet" href="../assets/css/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!------------------ start navigation bar ------------------------>
+    <nav>
+      <div class="container">
+        <div class="logo">
+          <img src="../assets/images/logo.jpg" alt="logo image" />
+        </div>
+        <!-- main page likes -->
+        <div class="links">
+          <ul class="links-ul">
+            <li><a href="../../src/index.html">Home</a></li>
+            <li><a href="../../src/kidcalc/indx.html">calculator</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <!-- toggle links -->
+        <div class="toggle-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="toggle-menu-links">
+          <ul class="links-ul">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../kidcalc/indx.html">calculator</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!------------------ end navigation bar ------------------------>
+    <!------------------ start blog post --------------------------->
+    <section>
+      <div class="container">
+        <div class="header">
+          <!-- button -->
+          <div class="header-link">
+            <a href="../index.html">Back to blog</a>
+          </div>
+          <div class="blog-title">
+            <h1>Design</h1>
+          </div>
+          <!-- auth -->
+          <div class="author">
+            <div class="author-image">
+              <img src="../assets/images/authimage.jpg" alt="auth image" />
+            </div>
+            <div class="author-text">
+              <h4>Author name</h4>
+              <p>Fill in with adescription of the author</p>
+            </div>
+          </div>
+          <!-- text -->
+          <div class="para1">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+              corporis iusto dolores numquam cumque dolore omnis cum officia
+              labore similique nesciunt nemo rem quam tenetur quibusdam.
+            </p>
+          </div>
+          <!-- box -->
+          <div class="para2">
+            <p>
+              Fabio vel iudice vincam, sunt in culpa qui officia. hi omnes
+              lingua, institutis, legibus inter se differunt
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="image">
+          <img src="../assets/images/designpost.jpg" alt="" />
+        </div>
+      </div>
+      <div class="container">
+        <div class="footer">
+          <!--  -->
+          <div class="para3">
+            <p>
+              Fabio vel iudice vincam, sunt in culpa qui officia
+              <span>ipsum()</span>, abillo tempore,abest sed immemorabili.
+              quisque placerat facilisis egestas cillum dolore. qui ipsorum
+              lingua celtae, nostra galli appellantur.
+            </p>
+          </div>
+          <!--  -->
+          <div class="box">
+            <h2>Quid securi etiam tamquam eu fugiat nulla pariatur</h2>
+            <p>
+              ut enim <span>adminim veniam,</span> quis nostrud exercitation
+            </p>
+          </div>
+          <!--  -->
+          <div class="list">
+            <ul>
+              <li>Ullamco laboris nisi ut aliquid ex eacommodi consequat.</li>
+              <li>Fictum, deserunt mollit anim laborum astutumquel.</li>
+              <li>Quique ut dolor gravida, placerat libero vel, euismod.</li>
+            </ul>
+          </div>
+          <!--  -->
+          <h2>Etiam habebis sem discantur managa mollis euismod</h2>
+          <!--  -->
+          <div class="list">
+            <ol>
+              <li>Ullamco laboris nisi ut aliquid ex eacommodi consequat.</li>
+              <li>Ullamco laboris nisi ut aliquid ex eacommodi consequat.</li>
+              <li>Ullamco laboris nisi ut aliquid ex eacommodi consequat.</li>
+            </ol>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </section>
+    <!------------------ end blog post ----------------------------->
+    <!------------------ start footer ------------------------------>
+    <footer>
+      <div class="container">
+        <div>
+          <p>&copy; copyright 2024</p>
+        </div>
+        <div class="icons">
+          <a href="http://facebook.com"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="http://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+          <a href="http://linkedin.com"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <!------------------ end footer -------------------------------->
+    <!-- --------------- javascript code -->
+    <script>
+      let toggleButton = document.querySelector(".toggle-menu");
+      toggleButton.addEventListener("click", () => {
+        let mobileMenu = document.querySelector(".toggle-menu-links");
+        mobileMenu.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

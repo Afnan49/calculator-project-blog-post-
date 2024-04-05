@@ -1,0 +1,48 @@
+/* start login */
+body.dark {
+  background-color: black;
+  padding: 40px;
+}
+.dark #loginForm {
+  background: #dedcdc52;
+}
+.dark #loginForm label {
+  color: #fff;
+}
+.dark #loginForm option {
+  color: black;
+}
+.dark #loginForm input[type="text"],
+.dark #loginForm select {
+  border: none;
+  outline: none;
+}
+.dark #loginForm .button {
+  background-color: black;
+}
+/* end login */
+/* start kidcalc*/
+.dark .kidCalc {
+  background: #dedcdc52;
+}
+.dark .kidCalc .answer-input,
+.dark .kidCalc .expression-box,
+.dark .kidCalc .result-box {
+  background-color: #fff;
+  color: black;
+}
+.dark .kidCalc .buttons button,
+.dark .kidCalc .submit-btn,
+.dark .kidCalc .clear-btn {
+  background-color: black;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+/* end kidcalc */
+/* start infobar */
+.dark #info-bar {
+  background-color: #dedcdc52;
+  color: #fff;
+}
+/* end infobar */
